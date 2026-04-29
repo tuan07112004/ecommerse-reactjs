@@ -1,0 +1,57 @@
+@import '@styles/mixin.module.scss';
+@import '@styles/variable.module.scss';
+
+.container {
+  background-color: bisque;
+  @include flex_box_custom(center, center, 0px);
+}
+
+.containerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1250px;
+  height: 83px;
+}
+
+.containerBoxItem {
+  @include flex_box_custom(center, center, 10px);
+}
+
+.containerBox {
+  @include flex_box_custom(center, center, 20px);
+}
+
+.containerMenu {
+  @include flex_box_custom(center, center, 40px);
+}
+
+.boxIcon {
+  width: 26px;
+  height: 26px;
+  @include radius_common(50%);
+  background-color: $primary_color;
+  @include flex_box_custom(center, center, 0px);
+}
+
+.menu::after {
+  // thêm 1 phẩn tử giả(ví dụ gạch chân sau chữ
+  content: ''; // tạo phần tử rỗng nhưng có thể set chiều cao, màu nền, transform
+  display: block; //xác định thanh ngang đó nằm hẳn xuống dưới chứ không nằm cạnh chữ vì tính chất block
+  height: 3px;
+  background-color: $primary_color;
+  transform-origin: right; // lấy bên phải làm gốc để bung ra
+  transform: scale(0); // cho lúc đầu thanh gạch chân thu về 0
+  transition: transform 300ms; // khi scale từ 0->1 không hiện phát 1 mà chcayj animation trong 300ms
+}
+
+.menu:hover::after {
+  transform: scale(1); // đổi thành 1 để hiện ra
+}
+
+.menu {
+  padding: 9px;
+  cursor: pointer;
+  font-size: 15px;
+  color: $primary_color;
+}
