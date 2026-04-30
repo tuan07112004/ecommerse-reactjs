@@ -2,8 +2,12 @@
 @import '@styles/variable.module.scss';
 
 .container {
-  background-color: bisque;
   @include flex_box_custom(center, center, 0px);
+  position: absolute; //cho phép container thoát ra khỏi luòng bình thường trang có thể chồng lên phần tử khác
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
 }
 
 .containerHeader {
@@ -39,7 +43,7 @@
   content: ''; // tạo phần tử rỗng nhưng có thể set chiều cao, màu nền, transform
   display: block; //xác định thanh ngang đó nằm hẳn xuống dưới chứ không nằm cạnh chữ vì tính chất block
   height: 3px;
-  background-color: $primary_color;
+  background-color: yellow;
   transform-origin: right; // lấy bên phải làm gốc để bung ra
   transform: scale(0); // cho lúc đầu thanh gạch chân thu về 0
   transition: transform 300ms; // khi scale từ 0->1 không hiện phát 1 mà chcayj animation trong 300ms
@@ -53,5 +57,5 @@
   padding: 9px;
   cursor: pointer;
   font-size: 15px;
-  color: $primary_color;
+  color: #fff;
 }

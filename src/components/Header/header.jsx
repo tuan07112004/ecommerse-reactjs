@@ -36,7 +36,6 @@ function MyHeader() {
             style={{
               width: 'auto',
               height: '90px',
-              mixBlendMode: 'multiply',
             }}
           />
         </div>

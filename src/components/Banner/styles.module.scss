@@ -1,0 +1,14 @@
+@import '@styles/mixin.module.scss';
+
+.container {
+  @include flex_box_custom(center, center, 0px);
+
+  background-image: url('../../assets/images/banner.png'); // lấy ảnh nền
+  height: 700px;
+  background-repeat: no-repeat; // ko lặp lại
+  background-size: cover; // ảnh phủ kín toàn bộ khung banner
+  background-position: center top; // căn giữa theo chiều ngang giữ phần trên
+}
+
+.content {
+}
