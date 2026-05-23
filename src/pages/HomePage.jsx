@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
 import Button from '../components/Button/Button'
-import { products, formatPrice } from '../data/products'
+import Info from '../components/Info/Info'
+import ProductShowcase from '../components/ProductShowcase/ProductShowcase'
 import './HomePage.css'
 
 export default function HomePage() {
@@ -14,19 +14,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="home-section">
-        <h2>Sản phẩm nổi bật</h2>
-        <ul className="home-product-list">
-          {products.slice(0, 3).map((p) => (
-            <li key={p.id}>
-              {p.name} — {formatPrice(p.price)}
-            </li>
-          ))}
-        </ul>
-        <Link to="/cua-hang" className="home-link-more">
-          → Xem tất cả cửa hàng
-        </Link>
-      </section>
+      <Info />
+
+      <ProductShowcase />
     </div>
   )
 }

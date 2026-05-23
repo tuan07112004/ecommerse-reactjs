@@ -1,0 +1,104 @@
+.info-bar {
+  width: 100%;
+  padding: 0 16px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 5;
+  margin-top: -40px;
+}
+
+/* Theo SCSS cũ .container — thu nhỏ padding / bỏ min-height cố định */
+.info-bar-inner {
+  width: 80%;
+  margin: 0 auto;
+  padding: 16px 40px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: rgba(5, 12, 28, 0.92);
+  border: 1px solid rgba(0, 225, 225, 0.35);
+  box-shadow: 0 0 25px rgba(0, 225, 225, 0.25);
+  backdrop-filter: blur(8px);
+  border-radius: 4px;
+}
+
+/* Theo SCSS .containerCard — không ép min-height 80px */
+.info-card {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  color: #fff;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  padding: 4px 6px;
+}
+
+.info-card img {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 8px rgba(0, 225, 225, 0.8));
+}
+
+.info-card > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.info-card-title {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.info-card-desc {
+  font-size: 13px;
+  line-height: 1.35;
+  color: #b8d8ff;
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+  background: rgba(0, 225, 255, 0.08);
+}
+
+@media (max-width: 900px) {
+  .info-bar-inner {
+    width: 92%;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 14px 24px;
+    gap: 14px;
+  }
+
+  .info-card {
+    flex: 1 1 calc(50% - 14px);
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 560px) {
+  .info-bar {
+    margin-top: -24px;
+  }
+
+  .info-bar-inner {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 14px 18px;
+  }
+
+  .info-card {
+    flex: 1 1 100%;
+    justify-content: flex-start;
+    gap: 16px;
+  }
+}
